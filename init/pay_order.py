@@ -32,6 +32,19 @@ from myException.ticketNumOutException import ticketNumOutException
 from myUrllib.httpUtils import HTTPClient
 from utils.timeUtil import time_to_minutes, minutes_to_time
 
+
+#导入webdriver
+from selenium import webdriver
+import time
+
+#要想调用键盘按键操作需要引入keys包
+from selenium.webdriver.common.keys import Keys
+
+#调用环境变量指定的PhantomJS浏览器创建浏览器对象
+driver = webdriver.PhantomJS()
+driver.set_window_size(1366, 768)
+
+
 try:
     reload(sys)
     sys.setdefaultencoding('utf-8')
@@ -194,6 +207,16 @@ class payorder:
         t.setDaemon(True)
         t.start()
         from_station, to_station = self.station_table(self.from_station, self.to_station)
+
+        print("********OKOKOKOKOKO******")
+        driver.get("https://kyfw.12306.cn/otn/view/train_order.html")
+        #获取页面名为wraper的id标签的文本内容
+        data = driver.page_source
+        print data
+        driver.quit()
+        #打印数据内容
+        print(data)
+
         num = 0
         while 1:
             try:
@@ -212,8 +235,8 @@ class payorder:
                 else:
                     sleep_time_s = 0.5
                     sleep_time_t = 3
-                pay = payOrder(self)
-                pay.reqPayorder()
+                # pay = payOrder(self)
+                # pay.reqPayorder()
                 
             except PassengerUserException as e:
                 print(e)
