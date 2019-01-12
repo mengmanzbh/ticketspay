@@ -21,6 +21,7 @@ from inter.AutoSubmitOrderRequest import autoSubmitOrderRequest
 from inter.CheckUser import checkUser
 from inter.GetPassengerDTOs import getPassengerDTOs
 from inter.LiftTicketInit import liftTicketInit
+from inter.PayOrder import payOrder
 from inter.Query import query
 from inter.SubmitOrderRequest import submitOrderRequest
 from myException.PassengerUserException import PassengerUserException

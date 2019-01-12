@@ -21,6 +21,7 @@ from inter.AutoSubmitOrderRequest import autoSubmitOrderRequest
 from inter.CheckUser import checkUser
 from inter.GetPassengerDTOs import getPassengerDTOs
 from inter.LiftTicketInit import liftTicketInit
+from inter.PayOrder import payOrder
 from inter.Query import query
 from inter.SubmitOrderRequest import submitOrderRequest
 from myException.PassengerUserException import PassengerUserException
@@ -211,13 +212,8 @@ class payorder:
                 else:
                     sleep_time_s = 0.5
                     sleep_time_t = 3
-
-                print("*******OKOKOKOKOK*******")
-                pay_order_url = self.session.urls["payOrder"]
-                pay_order_url_result = self.session.httpClint.send(pay_order_url, )
-                print(pay_order_url_result)
-
-                
+                pay = payOrder(self)
+                pay.reqPayorder()
                 
             except PassengerUserException as e:
                 print(e)
