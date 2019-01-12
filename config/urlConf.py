@@ -337,6 +337,18 @@ urls = {
         "is_logger": True,
         "is_json": True,
     },
+    "payOrder": {  #支付订单
+        "req_url": "https://epay.12306.cn/pay/payGateway",
+        "req_type": "post",
+        "Referer": "https://kyfw.12306.cn/otn/payOrder/init",
+        "Content-Type": 1,
+        "Host": "kyfw.12306.cn",
+        "re_try": 10,
+        "re_time": 0.01,
+        "s_time": 0.1,
+        "is_logger": True,
+        "is_json": True,
+    },
     "cdn_host": {
         "req_url": "http://ping.chinaz.com/kyfw.12306.cn",
         "req_type": "post"
