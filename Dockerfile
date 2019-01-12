@@ -10,6 +10,7 @@ ENV TZ Asia/Shanghai
 RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyspider --no-cache-dir -r requirements.txt
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone 
 RUN apt-get update && apt-get install -y vim-gtk
+RUN pip install selenium
 
 ## install ntpdate, not accept but saving code
 #RUN echo 'deb http://mirrors.163.com/debian/ jessie main non-free contrib \

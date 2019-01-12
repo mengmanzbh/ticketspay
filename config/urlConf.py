@@ -338,9 +338,9 @@ urls = {
         "is_json": True,
     },
     "payOrder": {  #支付订单
-        "req_url": "https://epay.12306.cn/pay/payGateway",
+        "req_url": "https://kyfw.12306.cn/otn/payOrder/init",
         "req_type": "post",
-        "Referer": "https://kyfw.12306.cn/otn/payOrder/init",
+        "Referer": "https://kyfw.12306.cn/otn/login/init",
         "Content-Type": 1,
         "Host": "kyfw.12306.cn",
         "re_try": 10,
