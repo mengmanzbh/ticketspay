@@ -12,7 +12,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && apt-get install -y vim-gtk
 
 # install chromedriver
-RUN apk update
+# RUN apk update
 RUN apk add chromium chromium-chromedriver
 
 # install selenium
