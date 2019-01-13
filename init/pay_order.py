@@ -41,7 +41,7 @@ import time
 from selenium.webdriver.common.keys import Keys
 
 #调用环境变量指定的PhantomJS浏览器创建浏览器对象
-driver = webdriver.Firefox()
+driver = webdriver.Chrome()
 driver.set_window_size(1366, 768)
 
 
