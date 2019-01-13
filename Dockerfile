@@ -11,18 +11,6 @@ RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyspider --no-cache-
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone 
 RUN apt-get update && apt-get install -y vim-gtk
 
-# install chromedriver
-# update apk repo
-RUN echo "http://dl-4.alpinelinux.org/alpine/v3.7/main" >> /etc/apk/repositories && \
-    echo "http://dl-4.alpinelinux.org/alpine/v3.7/community" >> /etc/apk/repositories
-
-# install chromedriver
-RUN apk update
-RUN apk add chromium chromium-chromedriver
-
-RUN apk update
-RUN apk add chromium chromium-chromedriver
-
 # install selenium
 RUN pip install selenium==3.8.0
 
